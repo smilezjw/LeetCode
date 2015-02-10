@@ -34,7 +34,8 @@ def findSubstring(S, L):
                 seg.remove(p)
             else:
                 break
-        if seg == []: # 表示全部匹配，则最前面的下标i添加到结果列表中
+        #表示全部匹配，则最前面的下标i添加到结果列表中
+        if seg == []:
             res.append(i)
     return res
 
