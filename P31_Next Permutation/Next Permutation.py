@@ -15,7 +15,7 @@ def nextPermutation(num):
     if partition == -1:
         num.reverse()
         return num
-    for i in xrange(len(num)-1, partition, -1): # 然后从右到左找到第一个大于下标为partition的元素
+    for i in xrange(len(num)-1, partition, -1):  # 然后从右到左找到第一个大于下标为partition的元素
         if num[i] > num[partition]:
             num[i], num[partition] = num[partition], num[i] # 将这两个元素呼唤
             break
