@@ -23,6 +23,12 @@ class Solution:
                 root = root.right
         return res
 
+    def recursiveInorderTraversal(self, root, list):
+        if root:
+            self.recursiveInorderTraversal(root.left, list)
+            list.append(root.val)
+            self.recursiveInorderTraversal(root.right, list)
+
 if __name__ == '__main__':
     root = TreeNode(1)
     rroot = root
