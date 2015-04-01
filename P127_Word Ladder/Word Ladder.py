@@ -54,6 +54,7 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution()
+    print s.ladderLength('a', 'c', set(['a', 'b', 'c']))
     print s.ladderLength(start='hit', end='cog', dict=set(["hot","dot","dog","lot","log"]))
 
 #########################################################################################
