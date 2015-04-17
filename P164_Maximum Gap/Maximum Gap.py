@@ -17,7 +17,7 @@ class Solution:
 
     # 桶排序
     # 列表中有N个元素，最小值为minimum，最大值为maximum，
-    # 那么最大差值不会小于(maximum - minimum) / (N - 1),相当于最大值与最小值的分到N-1个间隔中
+    # 那么最大差值不会小于(maximum - minimum - 1) / (N - 1),相当于最大值与最小值的分到N-1个间隔中
     # 每个桶的大小为range = ceiling((maximum - minimum) / (N - 1))
     # 桶的个数最多为len = (B - A) / range + 1
     # 对于数组中的任意整数k，可以通过loc = (k - minimum) / range找到桶的位置
