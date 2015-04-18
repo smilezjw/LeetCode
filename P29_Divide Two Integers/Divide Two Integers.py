@@ -11,7 +11,7 @@ def divide(dividend, divisor):
         flag = 1         # 记录商的正负号
     else:
         flag = -1
-    dividend = abs(dividend) # 用绝对值进行计算
+    dividend = abs(dividend)  # 用绝对值进行计算
     divisor = abs(divisor)
     count = 1                # 2的幂次，和除数同时左移或右移
     quotient = 0             # 商为2的幂次之和
@@ -32,6 +32,7 @@ def divide(dividend, divisor):
         return res
 
 if __name__ == '__main__':
+    print divide(47, 7)
     print divide(-10, 5)
     print divide(1, -1)
     print divide(11, 0)
@@ -42,6 +43,6 @@ if __name__ == '__main__':
 # 首先看到这道题第一反应是被除数不断减去除数，直至被除数小于除数为止，记录减去了多少个除数即可
 # 得到商。但是这样的做法遇到(2 ** 31 - 1) / 1 就非常非常慢，不能被accept。
 # 这道题可以用二分查找的思路，用被除数减去除数的2的幂次，例如：
-# 13 / 3 = 3 * 2^2 + 1，商为2^2 = 4;  47 / 7 = 7 * 2^2 + 7 * 2^1 + 5,商为2^2 + 2^1 = 5
+# 13 / 3 = 3 * 2^2 + 1，商为2^2 = 4;  47 / 7 = 7 * 2^2 + 7 * 2^1 + 5,商为2^2 + 2^1 = 6
 # 所以通过位运算，左移表示乘以2，右移表示除以2，将除数不断左移直至大于被除数，然后开始右移，
 # 被除数减去除数，同时有一个变量记录2的幂次，直至被除数小于除数。
