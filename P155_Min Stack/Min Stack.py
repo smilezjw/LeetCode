@@ -27,6 +27,24 @@ class MinStack:
     def getMin(self):      # 最小栈的栈顶记录最小元素，常数时间即可取得该元素
         return self.minStack[-1]
 
+
+if __name__ == '__main__':
+    ms = MinStack()
+    ms.push(3)
+    ms.push(4)
+    ms.push(2)
+    ms.push(1)
+    ms.push(3)
+    print ms.stack
+    print ms.minStack
+    ms.pop()
+    ms.pop()
+    ms.pop()
+    ms.pop()
+    print ms.stack
+    print ms.minStack
+
+
 #######################################################################################
 # 这道题采用双栈法，开辟两个栈（用列表来表示），stack中存储当前所有元素，minStack中存储
 # 当前最小值，能够在常数时间内取得最小值。
