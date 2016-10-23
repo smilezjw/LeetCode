@@ -1,0 +1,49 @@
+package Leetcode;
+
+import java.util.*;
+
+/**
+ * Created by Jiawen on 16/10/23.
+ */
+public class CombinationSumII {
+
+    private List<List<Integer>> results = new ArrayList<>();
+
+
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        Arrays.sort(candidates);
+        LinkedList<Integer> res = new LinkedList<>();
+        backtracing(candidates, target, 0, res);
+        return results;
+
+    }
+
+    public void backtracing(int[] candidates, int target, int begin, LinkedList<Integer> res){
+        if(target == 0){
+            results.add(new LinkedList<>(res));
+            return;
+        }
+        for(int i=begin; i<candidates.length; i++){
+            if(candidates[i] > target){
+                break;
+            }
+            if(i>begin && candidates[i] == candidates[i-1]){
+                continue;
+            }
+            res.add(candidates[i]);
+            backtracing(candidates, target-candidates[i], i+1, res);
+            res.removeLast();
+        }
+    }
+
+
+    public static void main(String[] args){
+        int[] nums = {10, 1, 2, 7, 6, 1, 5};
+        CombinationSumII solution = new CombinationSumII();
+        solution.combinationSum2(nums, 8);
+        System.out.println(solution.results.size());
+        System.out.println(solution.results);
+    }
+
+
+}
